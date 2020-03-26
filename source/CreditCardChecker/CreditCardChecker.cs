@@ -62,7 +62,7 @@ namespace CreditCardChecker
 
                return sum;
               */
-            return null;
+            return 0;
         }
 
         /// <summary>
