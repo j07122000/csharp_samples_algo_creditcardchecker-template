@@ -62,7 +62,7 @@ namespace CreditCardChecker
 
                return sum;
               */
-            return 0;
+            return oddSum + evenSum;
         }
 
         /// <summary>
