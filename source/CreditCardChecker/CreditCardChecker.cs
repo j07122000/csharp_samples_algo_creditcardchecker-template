@@ -18,7 +18,7 @@ namespace CreditCardChecker
             if (length == 16)
             {
 
-                for (int i = 0; i < 16; i++)
+                for (int i = 0; i < length; i++)
                 {
                     if (i % 2 == 0)
                     {
