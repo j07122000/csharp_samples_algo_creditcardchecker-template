@@ -11,7 +11,7 @@ namespace CreditCardChecker
         public static bool IsCreditCardValid(string creditCardNumber)
         {
             int length = creditCardNumber.Length;
-           if(length == 16)
+           if(length == 16 )
             {
                 return true;
             }
@@ -43,7 +43,14 @@ namespace CreditCardChecker
                   }
 
                   */
+            var gerade = CalculateDigitSum(oddSum);
+            var ungerade = CalculateDigitSum(evenSum);
+
+             gerade += 1;
+            ungerade += 1;
             var sum = oddSum + evenSum;
+            var einerstelle = sum % 10;
+            if(sum > 10)
 
             return sum;
            
