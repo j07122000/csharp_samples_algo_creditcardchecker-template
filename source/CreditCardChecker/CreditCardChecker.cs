@@ -11,27 +11,27 @@ namespace CreditCardChecker
         public static bool IsCreditCardValid(string creditCardNumber)
         {
             int length = creditCardNumber.Length;
-            var oddSum = 0;
-            var evenSum = 0;
+            int oddSum = 0;
+            int evenSum = 0;
+            int ziffernsumme = 0;
+            int ni = 0;
             if (length == 16)
             {
-
-
 
                 for (int i = 0; i < 16; i++)
                 {
                     if (i % 2 == 0)
                     {
                         var newi = i * 2;
-                        var ziffernsumme = newi + newi;
+                         ziffernsumme += newi + newi;
                         ziffernsumme += 1;
                         evenSum = ziffernsumme;
 
                     }
                     else
                     {
-                        var ni = i++;
-                        oddSum = ni;
+                        ni = i++;
+                        oddSum += ni;
 
                     }
 
