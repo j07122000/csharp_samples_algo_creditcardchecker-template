@@ -11,9 +11,35 @@ namespace CreditCardChecker
         public static bool IsCreditCardValid(string creditCardNumber)
         {
             int length = creditCardNumber.Length;
-           if(length == 16 )
+            var oddSum = 0;
+            var evenSum = 0;
+            if (length == 16)
             {
-                return true;
+
+
+
+                for (int i = 0; i < 16; i++)
+                {
+                    if (i % 2 == 0)
+                    {
+                        var newi = i * 2;
+                        var ziffernsumme = newi + newi;
+                        ziffernsumme += 1;
+                        evenSum = ziffernsumme;
+
+                    }
+                    else
+                    {
+                        var ni = i++;
+                        oddSum = ni;
+
+                    }
+
+                    return true;
+                }
+
+
+     
             }
             return false;
         }
@@ -25,35 +51,18 @@ namespace CreditCardChecker
         private static int CalculateCheckDigit(int oddSum, int evenSum)
         {
 
-            /*  for (int i = 0; i < 16; i++)
-              {
-                  if (i % 2 == 0)
-                  {
-                      var newi = i* 2;
-                      var ziffernsumme = newi + newi;
-                      ziffernsumme += 1;
+            /*   var gerade = CalculateDigitSum(oddSum);
+               var ungerade = CalculateDigitSum(evenSum);
 
+               gerade += 1;
+               ungerade += 1;
+               var sum = oddSum + evenSum;
+               var einerstelle = sum % 10;
+               if(sum > 10)
 
-
-                  }
-                  else
-                  {
-                      var ni  =  i ++;
-
-                  }
-
-                  */
-            var gerade = CalculateDigitSum(oddSum);
-            var ungerade = CalculateDigitSum(evenSum);
-
-             gerade += 1;
-            ungerade += 1;
-            var sum = oddSum + evenSum;
-            var einerstelle = sum % 10;
-            if(sum > 10)
-
-            return sum;
-           
+               return sum;
+              */
+            return null;
         }
 
         /// <summary>
