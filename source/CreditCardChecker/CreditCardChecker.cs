@@ -10,7 +10,12 @@ namespace CreditCardChecker
         /// </summary>
         public static bool IsCreditCardValid(string creditCardNumber)
         {
-            throw new NotImplementedException();
+            int length = creditCardNumber.Length;
+           if(length == 16)
+            {
+                return true;
+            }
+            return false;
         }
 
         /// <summary>
@@ -19,7 +24,29 @@ namespace CreditCardChecker
         /// </summary>
         private static int CalculateCheckDigit(int oddSum, int evenSum)
         {
-            throw new NotImplementedException();
+
+            /*  for (int i = 0; i < 16; i++)
+              {
+                  if (i % 2 == 0)
+                  {
+                      var newi = i* 2;
+                      var ziffernsumme = newi + newi;
+                      ziffernsumme += 1;
+
+
+
+                  }
+                  else
+                  {
+                      var ni  =  i ++;
+
+                  }
+
+                  */
+            var sum = oddSum + evenSum;
+
+            return sum;
+           
         }
 
         /// <summary>
@@ -27,12 +54,24 @@ namespace CreditCardChecker
         /// </summary>
         private static int CalculateDigitSum(int number)
         {
-            throw new NotImplementedException();
+            var sum = 0;
+            while (number > 0)
+            {
+                var n = number % 10;
+                sum = sum + n;
+                number = number / 10;
+
+            }
+            return sum;
+            
         }
 
         private static int ConvertToInt(char ch)
         {
-            throw new NotImplementedException();
+            var c = Int32.Parse(ch.ToString());
+            return c;
         }
+
+
     }
 }
